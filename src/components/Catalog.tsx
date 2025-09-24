@@ -73,11 +73,11 @@ const Catalog = () => {
                   {category.description}
                 </p>
                 <Button 
-                  onClick={() => handleWhatsApp(category.whatsappMessage)}
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-medium py-3 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                  onClick={() => window.location.href = `/categoria/${category.title.toLowerCase().replace(/\s+/g, '-').replace('óculos-', 'oculos-')}`}
+                  variant="premium"
+                  className="w-full font-medium py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <MessageCircle className="h-4 w-4" />
-                  Solicitar informações
+                  Conferir
                 </Button>
               </CardContent>
             </Card>

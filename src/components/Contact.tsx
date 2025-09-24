@@ -156,16 +156,20 @@ const Contact = () => {
           </Card>
         </div>
 
-        {/* Map Placeholder */}
+        {/* Google Maps */}
         <div className="mt-16">
           <Card className="border-0 shadow-lg overflow-hidden">
-            <div className="h-64 bg-gradient-to-r from-primary/20 to-primary-light/20 flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                <p className="text-lg text-muted-foreground">
-                  Localização: Centro de Ipu - CE
-                </p>
-              </div>
+            <div className="h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.123456789!2d-40.12345!3d-4.567890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.%20Padre%20Corr%C3%AAa%2C%201197%20-%20Centro%2C%20Ipu%20-%20CE%2C%2062250-000!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização da Ótica Vitorino"
+              ></iframe>
             </div>
           </Card>
         </div>

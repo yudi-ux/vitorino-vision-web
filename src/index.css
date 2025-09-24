@@ -6,38 +6,42 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Professional Blues */
+    /* Ótica Vitorino Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 220 15% 25%;
+    --foreground: 240 77% 1%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 240 77% 1%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover-foreground: 240 77% 1%;
 
-    /* Primary - Professional Blue */
-    --primary: 220 91% 42%;
+    /* Primary - Ótica Vitorino Red */
+    --primary: 0 93% 41%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 60% 55%;
-    --primary-dark: 220 91% 35%;
+    --primary-light: 0 93% 55%;
+    --primary-dark: 0 93% 30%;
 
-    /* Secondary - Elegant Gray */
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 15% 25%;
+    /* Secondary - Light Pink */
+    --secondary: 0 15% 96%;
+    --secondary-foreground: 240 77% 1%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    /* Additional Brand Colors */
+    --brand-gray: 60 3% 41%;
+    --brand-green: 162 14% 54%;
 
-    --accent: 220 60% 55%;
+    --muted: 0 15% 96%;
+    --muted-foreground: 60 3% 41%;
+
+    --accent: 0 93% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 91% 42%;
+    --border: 0 15% 91%;
+    --input: 0 15% 91%;
+    --ring: 0 93% 41%;
 
     --radius: 0.75rem;
 

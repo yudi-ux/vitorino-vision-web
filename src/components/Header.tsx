@@ -20,10 +20,12 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary to-primary-light p-2 rounded-lg">
-              <Eye className="h-6 w-6 text-white" />
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/src/assets/logo-otica-vitorino.png" 
+              alt="Ótica Vitorino" 
+              className="h-10 w-10 rounded-full bg-white p-1"
+            />
             <span className="text-2xl font-bold text-foreground">Ótica Vitorino</span>
           </div>
 

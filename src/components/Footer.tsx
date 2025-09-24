@@ -120,10 +120,18 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-12 pt-8 text-center">
-          <p className="text-white/60">
-            © 2025 Ótica Vitorino – Todos os direitos reservados.
-          </p>
+        <div className="border-t border-white/20 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-white/60">
+              © 2025 Ótica Vitorino – Todos os direitos reservados.
+            </p>
+            <button 
+              onClick={() => window.location.href = '/terms'}
+              className="text-white/60 hover:text-white transition-colors duration-300 underline"
+            >
+              Direitos Autorais e Termos de Uso
+            </button>
+          </div>
         </div>
       </div>
     </footer>

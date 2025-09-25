@@ -103,11 +103,5 @@
 
   body {
     @apply bg-background text-foreground;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23D10101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h11l-4 7h4l-7 11-7-11h4l-4-7z"/></svg>') 12 12, auto;
-  }
-
-  /* Glasses cursor for interactive elements */
-  button, a, [role="button"] {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23D10101" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M6 11c0-1.7.7-3.2 1.8-4.2C8.9 5.8 10.4 5 12 5s3.1.8 4.2 1.8c1.1 1 1.8 2.5 1.8 4.2"/><path d="M14 15h-4"/></svg>') 12 12, pointer;
   }
 }

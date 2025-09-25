@@ -85,8 +85,8 @@ const CategoryPage = () => {
         }
       ]
     },
-    "lentes-de-oculos": {
-      title: "Lentes de Óculos",
+    "lentes": {
+      title: "Lentes",
       description: "Lentes de alta qualidade com tecnologia avançada",
       products: [
         {
@@ -223,7 +223,7 @@ const CategoryPage = () => {
   const handleWhatsApp = (productName: string) => {
     const message = `Olá! Gostaria de mais informações sobre o produto: ${productName}`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/558888888888?text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=558899048755&fbclid=PAZXh0bgNhZW0CMTEAAacPHZoHXRNxcV6X3ksZCw08u6a6kmbp22avhxGkEC_z4uzAeFMrYmA5xsbOIQ_aem_TB2C66pBA2YvlEl1v_6X4g&text=${encodedMessage}`, '_blank');
   };
 
   return (

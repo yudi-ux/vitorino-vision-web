@@ -30,11 +30,17 @@ const Contact = () => {
   const handleWhatsApp = () => {
     const message = "Olá! Gostaria de mais informações sobre os serviços da Ótica Vitorino.";
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/558888888888?text=${encodedMessage}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=558899048755&fbclid=PAZXh0bgNhZW0CMTEAAacPHZoHXRNxcV6X3ksZCw08u6a6kmbp22avhxGkEC_z4uzAeFMrYmA5xsbOIQ_aem_TB2C66pBA2YvlEl1v_6X4g&text=${encodedMessage}`, '_blank');
+  };
+
+  const handleConsultation = () => {
+    const message = "Olá! Gostaria de agendar uma consulta na Ótica Vitorino.";
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://api.whatsapp.com/send?phone=558899048755&fbclid=PAZXh0bgNhZW0CMTEAAacPHZoHXRNxcV6X3ksZCw08u6a6kmbp22avhxGkEC_z4uzAeFMrYmA5xsbOIQ_aem_TB2C66pBA2YvlEl1v_6X4g&text=${encodedMessage}`, '_blank');
   };
 
   const handleInstagram = () => {
-    window.open('https://instagram.com/oticavitorino', '_blank');
+    window.open('https://www.instagram.com/oticavitorino.ipu/', '_blank');
   };
 
   return (
@@ -85,22 +91,33 @@ const Contact = () => {
             </Card>
 
             {/* Contact Actions */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4">
               <Button 
-                onClick={handleWhatsApp}
-                className="bg-green-600 hover:bg-green-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 transform hover:scale-105"
+                onClick={handleConsultation}
+                variant="premium"
+                className="w-full font-medium py-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 transform hover:scale-105"
               >
                 <MessageCircle className="h-5 w-5" />
-                WhatsApp
+                Agendar Consulta
               </Button>
               
-              <Button 
-                onClick={handleInstagram}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 transform hover:scale-105"
-              >
-                <Instagram className="h-5 w-5" />
-                Instagram
-              </Button>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <Button 
+                  onClick={handleWhatsApp}
+                  className="bg-green-600 hover:bg-green-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 transform hover:scale-105"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  WhatsApp
+                </Button>
+                
+                <Button 
+                  onClick={handleInstagram}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 transform hover:scale-105"
+                >
+                  <Instagram className="h-5 w-5" />
+                  Instagram
+                </Button>
+              </div>
             </div>
           </div>
 
@@ -129,6 +146,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    title="Digite um endereço de email válido"
                     className="py-3 px-4 rounded-lg border-border focus:border-primary"
                   />
                 </div>

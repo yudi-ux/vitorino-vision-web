@@ -18,7 +18,7 @@ const Catalog = () => {
       whatsappMessage: "Olá! Gostaria de mais informações sobre óculos de sol."
     },
     {
-      title: "Lentes de Óculos",
+      title: "Lentes",
       description: "Lentes de alta qualidade com tecnologia avançada",
       image: glassesCollection,
       whatsappMessage: "Olá! Gostaria de mais informações sobre lentes de óculos."
@@ -73,7 +73,14 @@ const Catalog = () => {
                   {category.description}
                 </p>
                 <Button 
-                  onClick={() => window.location.href = `/categoria/${category.title.toLowerCase().replace(/\s+/g, '-').replace('óculos-', 'oculos-')}`}
+                  onClick={() => {
+                    const categoryPath = category.title.toLowerCase()
+                      .replace(/\s+/g, '-')
+                      .replace('óculos-', 'oculos-')
+                      .replace('lentes-de-óculos', 'lentes')
+                      .replace('lentes-', 'lentes');
+                    window.location.href = `/categoria/${categoryPath}`;
+                  }}
                   variant="premium"
                   className="w-full font-medium py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
                 >

@@ -74,11 +74,27 @@ const Catalog = () => {
                 </p>
                 <Button 
                   onClick={() => {
-                    const categoryPath = category.title.toLowerCase()
-                      .replace(/\s+/g, '-')
-                      .replace('óculos-', 'oculos-')
-                      .replace('lentes-de-óculos', 'lentes')
-                      .replace('lentes-', 'lentes');
+                    let categoryPath = category.title.toLowerCase().replace(/\s+/g, '-');
+                    
+                    // Mapeamento específico para as categorias
+                    switch(categoryPath) {
+                      case 'óculos-de-grau':
+                        categoryPath = 'oculos-de-grau';
+                        break;
+                      case 'óculos-de-sol':
+                        categoryPath = 'oculos-de-sol';
+                        break;
+                      case 'lentes':
+                        categoryPath = 'lentes';
+                        break;
+                      case 'armações':
+                        categoryPath = 'armacoes';
+                        break;
+                      case 'relógios':
+                        categoryPath = 'relogios';
+                        break;
+                    }
+                    
                     window.location.href = `/categoria/${categoryPath}`;
                   }}
                   variant="premium"

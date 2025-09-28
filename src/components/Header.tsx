@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Eye } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -61,6 +61,15 @@ const Header = () => {
             >
               Contato
             </button>
+            <Button
+              onClick={() => window.location.href = '/crm/login'}
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2 text-xs"
+            >
+              <Shield className="h-3 w-3" />
+              CRM
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -108,6 +117,15 @@ const Header = () => {
               >
                 Contato
               </button>
+              <Button
+                onClick={() => window.location.href = '/crm/login'}
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2 text-xs w-fit"
+              >
+                <Shield className="h-3 w-3" />
+                Acessar CRM
+              </Button>
             </div>
           </nav>
         )}

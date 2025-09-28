@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import CategoryPage from "./pages/CategoryPage";
+import CRMLogin from "./pages/CRMLogin";
+import CRMDashboard from "./pages/CRMDashboard";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/categoria/:category" element={<CategoryPage />} />
+          <Route path="/crm/login" element={<CRMLogin />} />
+          <Route path="/crm" element={<CRMDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -14,7 +14,258 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      crm_analytics: {
+        Row: {
+          criado_em: string
+          dados: Json | null
+          evento: string
+          id: string
+          ip_origem: string | null
+          referrer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          criado_em?: string
+          dados?: Json | null
+          evento: string
+          id?: string
+          ip_origem?: string | null
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          criado_em?: string
+          dados?: Json | null
+          evento?: string
+          id?: string
+          ip_origem?: string | null
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
+      crm_conteudo: {
+        Row: {
+          ativo: boolean
+          atualizado_em: string
+          atualizado_por: string | null
+          chave: string
+          criado_em: string
+          descricao: string | null
+          id: string
+          tipo: string
+          valor: string
+        }
+        Insert: {
+          ativo?: boolean
+          atualizado_em?: string
+          atualizado_por?: string | null
+          chave: string
+          criado_em?: string
+          descricao?: string | null
+          id?: string
+          tipo: string
+          valor: string
+        }
+        Update: {
+          ativo?: boolean
+          atualizado_em?: string
+          atualizado_por?: string | null
+          chave?: string
+          criado_em?: string
+          descricao?: string | null
+          id?: string
+          tipo?: string
+          valor?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_conteudo_atualizado_por_fkey"
+            columns: ["atualizado_por"]
+            isOneToOne: false
+            referencedRelation: "crm_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crm_permissions: {
+        Row: {
+          id: string
+          pode_criar: boolean
+          pode_deletar: boolean
+          pode_editar: boolean
+          pode_ler: boolean
+          recurso: string
+          role: Database["public"]["Enums"]["crm_role"]
+        }
+        Insert: {
+          id?: string
+          pode_criar?: boolean
+          pode_deletar?: boolean
+          pode_editar?: boolean
+          pode_ler?: boolean
+          recurso: string
+          role: Database["public"]["Enums"]["crm_role"]
+        }
+        Update: {
+          id?: string
+          pode_criar?: boolean
+          pode_deletar?: boolean
+          pode_editar?: boolean
+          pode_ler?: boolean
+          recurso?: string
+          role?: Database["public"]["Enums"]["crm_role"]
+        }
+        Relationships: []
+      }
+      crm_produtos: {
+        Row: {
+          ativo: boolean
+          atualizado_em: string
+          atualizado_por: string | null
+          caracteristicas: Json | null
+          categoria: string
+          criado_em: string
+          criado_por: string | null
+          descricao: string | null
+          em_estoque: boolean
+          id: string
+          imagem_url: string | null
+          nome: string
+          preco: number | null
+          preco_promocional: number | null
+          quantidade_estoque: number | null
+        }
+        Insert: {
+          ativo?: boolean
+          atualizado_em?: string
+          atualizado_por?: string | null
+          caracteristicas?: Json | null
+          categoria: string
+          criado_em?: string
+          criado_por?: string | null
+          descricao?: string | null
+          em_estoque?: boolean
+          id?: string
+          imagem_url?: string | null
+          nome: string
+          preco?: number | null
+          preco_promocional?: number | null
+          quantidade_estoque?: number | null
+        }
+        Update: {
+          ativo?: boolean
+          atualizado_em?: string
+          atualizado_por?: string | null
+          caracteristicas?: Json | null
+          categoria?: string
+          criado_em?: string
+          criado_por?: string | null
+          descricao?: string | null
+          em_estoque?: boolean
+          id?: string
+          imagem_url?: string | null
+          nome?: string
+          preco?: number | null
+          preco_promocional?: number | null
+          quantidade_estoque?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_produtos_atualizado_por_fkey"
+            columns: ["atualizado_por"]
+            isOneToOne: false
+            referencedRelation: "crm_users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "crm_produtos_criado_por_fkey"
+            columns: ["criado_por"]
+            isOneToOne: false
+            referencedRelation: "crm_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crm_sessions: {
+        Row: {
+          criado_em: string
+          expira_em: string
+          id: string
+          token: string
+          user_id: string
+        }
+        Insert: {
+          criado_em?: string
+          expira_em: string
+          id?: string
+          token: string
+          user_id: string
+        }
+        Update: {
+          criado_em?: string
+          expira_em?: string
+          id?: string
+          token?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "crm_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      crm_users: {
+        Row: {
+          ativo: boolean
+          atualizado_em: string
+          criado_em: string
+          criado_por: string | null
+          email: string
+          id: string
+          nome: string
+          password_hash: string
+          role: Database["public"]["Enums"]["crm_role"]
+          ultimo_acesso: string | null
+        }
+        Insert: {
+          ativo?: boolean
+          atualizado_em?: string
+          criado_em?: string
+          criado_por?: string | null
+          email: string
+          id?: string
+          nome: string
+          password_hash: string
+          role?: Database["public"]["Enums"]["crm_role"]
+          ultimo_acesso?: string | null
+        }
+        Update: {
+          ativo?: boolean
+          atualizado_em?: string
+          criado_em?: string
+          criado_por?: string | null
+          email?: string
+          id?: string
+          nome?: string
+          password_hash?: string
+          role?: Database["public"]["Enums"]["crm_role"]
+          ultimo_acesso?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "crm_users_criado_por_fkey"
+            columns: ["criado_por"]
+            isOneToOne: false
+            referencedRelation: "crm_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +274,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      crm_role: "gerente" | "estoquista" | "vendedor" | "marketing"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +401,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      crm_role: ["gerente", "estoquista", "vendedor", "marketing"],
+    },
   },
 } as const
